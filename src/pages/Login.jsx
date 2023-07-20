@@ -4,9 +4,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useLogin } from '../utils/loginUtils'
 import * as Yup from 'yup'
 import { Formik } from 'formik'
+import { useSelector } from 'react-redux'
 
 const Login = () => {
   const navigate = useNavigate()
+  const user = useSelector(({ user }) => user)
 
   const validationSchema = Yup.object().shape({
     username: Yup.string().required('Username is required'),
@@ -18,20 +20,14 @@ const Login = () => {
 
   useEffect(() => {
     if (loginData) {
-      const token = loginData.login.value
-      window.localStorage.setItem('token', token)
+      window.localStorage.setItem('loggedUser', JSON.stringify(user))
       navigate('/')
     }
-  }, [loginData])
-
-  useEffect(() => {
     if (loginError) {
       setError(true)
       setTimeout(() => setError(false), 5000)
-    } else {
-      setError(false)
     }
-  }, [loginError])
+  }, [loginData, loginError])
 
   return (
     <Container fluid='md' className='my-auto vh-90 p-5'>
