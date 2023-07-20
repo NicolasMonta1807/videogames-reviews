@@ -1,9 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const getFromStorage = () => {
-  const user = JSON.parse(window.localStorage.getItem('loggedUser'))
-  console.log('Logged in:', user)
-  return user || null
+  return JSON.parse(window.localStorage.getItem('loggedUser')) || null
 }
 const userReducer = createSlice({
   name: 'user',
