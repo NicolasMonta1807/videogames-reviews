@@ -28,6 +28,7 @@ const Register = () => {
 
   return (
     <Container fluid='md' className='my-auto vh-90 p-5'>
+      <h1 className='text-center mb-3 p-10'>Sign Up</h1>
       {registerError && (
         <Alert key='danger' variant='danger' show={error}>
           {`Sign up failed. ${registerError.message}.`}

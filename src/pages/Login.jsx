@@ -31,9 +31,12 @@ const Login = () => {
 
   return (
     <Container fluid='md' className='my-auto vh-90 p-5'>
-      <Alert key='danger' variant='danger' show={error}>
-        Login failed. Please check your username and password.
-      </Alert>
+      <h1 className='text-center mb-3 p-10'>Login</h1>
+      {loginError && (
+        <Alert key='danger' variant='danger' show={error}>
+          Login Failed. Please check your username and password.
+        </Alert>
+      )}
       <UserForm
         validationSchema={validationSchema}
         handleSubmit={handleLogin}

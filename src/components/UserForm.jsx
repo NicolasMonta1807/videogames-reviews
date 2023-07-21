@@ -30,7 +30,7 @@ const UserForm = ({ validationSchema, handleSubmit, submitText }) => {
             </InputGroup>
           </Form.Group>
 
-          <Form.Group className='mb-3' controlId='validationFormikPassword'>
+          <Form.Group className='mt-3 mb-3' controlId='validationFormikPassword'>
             <Form.Label>Password</Form.Label>
             <InputGroup hasValidation>
               <Form.Control

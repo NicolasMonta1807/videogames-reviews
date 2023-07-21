@@ -1,6 +1,6 @@
 const Games = () => {
   return (
-    <div>Games</div>
+    <h1 className='text-center mb-5 p-5'>Games</h1>
   )
 }
 
