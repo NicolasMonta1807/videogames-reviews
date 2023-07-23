@@ -5,11 +5,13 @@ import Games from './pages/Games'
 import About from './pages/About'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Notification from './components/Notification'
 
 const App = () => {
   return (
     <BrowserRouter>
       <Menu />
+      <Notification />
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route path='/games' element={<Games />} />
