@@ -11,6 +11,7 @@ const userReducer = createSlice({
       return action.payload
     },
     clearUser (state, action) {
+      window.localStorage.removeItem('loggedUser')
       return null
     }
   }
